@@ -10,6 +10,7 @@ import ApiService from './services/ApiService';
 // import axios from 'axios';
 import Demo2 from "./Demo2"
 import ScatterJS from 'scatterjs-core';
+import './Demo1.css';
 // import {Link} from 'react-router-dom'
 // import { withToastManager, useToasts } from 'react-toast-notifications';
 // import { ToastContainer, toast } from 'react-toastify';
