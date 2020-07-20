@@ -129,7 +129,7 @@ class Login extends Component {
         // User does not have Scatter Desktop, Mobile or Classic installed.
         debugger;
         if(!connected) {
-            alert(`no scatter!`);
+            alert(`No scatter wallet detected.`);
             return false;
         }
         return ScatterJS.login().then(id => {
@@ -200,6 +200,7 @@ class Login extends Component {
               /> */}
               <input type="submit" value="Authenticate" onClick={this.login}/>
               {/* <input type="submit" value="Send"/> */}
+              <label htmlFor="ageRangeField">One must have a scatter wallet to use EOS ACL.</label>
             </fieldset>
           </form>
         </div>
