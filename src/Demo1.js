@@ -113,7 +113,7 @@ class Demo1 extends Component {
   //   })
   // }
 
-  getHistory() {
+  getHistory(event) {
     // alert("hi");
     event.preventDefault();
     const {username, targetUsername, targetRole, textarea, eosAccount} = this.props;
@@ -132,7 +132,7 @@ class Demo1 extends Component {
     });
   }
 
-  logaccess() {
+  logaccess(event) {
     // alert("hi");
     event.preventDefault();
     const {username, targetUsername, targetRole, textarea, eosAccount, selectedOption} = this.props;
@@ -174,7 +174,7 @@ class Demo1 extends Component {
     });
   }
 
-  checkaccess() {
+  checkaccess(event) {
     // alert("hi");
     event.preventDefault();
     const {username, targetUsername, targetRole, textarea, eosAccount, selectedOption} = this.props;
@@ -199,7 +199,7 @@ class Demo1 extends Component {
     });
   }
 
-  sharekey() {
+  sharekey(event) {
     // alert("hi");
     event.preventDefault();
     const {username, targetUsername, targetRole, textarea, eosAccount, selectedOption} = this.props;
@@ -220,7 +220,7 @@ class Demo1 extends Component {
     });
   }
 
-  revokekey() {
+  revokekey(event) {
     // alert("hi");
     event.preventDefault();
     const {username, targetUsername, targetRole, textarea, eosAccount, selectedOption} = this.props;
