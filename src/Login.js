@@ -222,7 +222,7 @@ class Login extends Component {
               }
 
               <div>
-                This is the web interface for a decentralized Access Control List (ACL) application.
+                This is the web interface for a decentralized Access Control List (ACL) application on the EOS blockchain.
                 <br></br>
                 <br></br>
                 <i>What does it solve?</i> There is no central service or data store with all of your access credentials and access history.
