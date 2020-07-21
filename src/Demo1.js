@@ -12,6 +12,8 @@ import Demo2 from "./Demo2"
 import ScatterJS from 'scatterjs-core';
 import Button from 'react-bootstrap/Button';
 import './Demo1.css';
+// import './paper.css';
+import "bootswatch/dist/minty/bootstrap.min.css"; 
 import { ButtonRow } from '@thumbtack/thumbprint-react';
 // import {Link} from 'react-router-dom'
 // import { withToastManager, useToasts } from 'react-toast-notifications';
