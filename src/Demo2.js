@@ -81,7 +81,7 @@ class Demo2 extends Component {
       <div styleName="custom.container">
         {/* <Nav {...this.props} /> */}
         <section styleName="custom.header">
-          <h2>{this.props.username}</h2>
+          <h2>{this.props.username}'s key chain</h2>
           <ul> 
             {/* adminLockIds: {this.props.adminLockIds}
             userLockIds: {this.props.userLockIds} */}

@@ -333,6 +333,7 @@ render() {
                   Get User Access History
               </Button> 
             </ButtonRow>
+            {/* <br/> */}
             {/* <form onSubmit={this.claimlock}> */}
             <label htmlFor="lockIdField">Lock ID</label>
             <input
@@ -350,14 +351,18 @@ render() {
                   }}
                 />
 
-              <input type="submit" value="Log Access" onClick={this.logaccess}/>
-              <input type="submit" value="Claim Lock" onClick={this.claimlock}/>
+              <ButtonRow>
+                <Button class='btn' type="submit" onClick={this.logaccess} variant="outline-dark">Log Access</Button>
+                <Button class='btn' type="submit" onClick={this.claimlock} variant="outline-dark">Claim Lock</Button>
+              </ButtonRow>
+              {/* <input type="submit" value="Log Access" onClick={this.logaccess}/> */}
+              {/* <input type="submit" value="Claim Lock" onClick={this.claimlock}/> */}
 
               {/* <fieldset> */}
               <label htmlFor="nameField">Target User</label>
               <input
                 type="text"
-                placeholder="EOS Account Username"
+                placeholder="Target EOS Account"
                 id="targetUserField"
                 value={this.props.targetUsername}
                 onChange={event => {
@@ -365,7 +370,10 @@ render() {
                 }}
               />
 
-              <input type="submit" value="Check Access" onClick={this.checkaccess}/>
+              <ButtonRow>
+                <Button class='btn' type="submit" onClick={this.checkaccess} variant="outline-dark">Check Access</Button>
+              </ButtonRow>
+              {/* <input type="submit" value="Check Access" onClick={this.checkaccess}/> */}
 
               <label htmlFor="roleField">Target Role</label>
               {/* <input
@@ -390,8 +398,12 @@ render() {
                 <option value="20">Admin</option>
               </select>
 
-              <input type="submit" value="Share Key" onClick={this.sharekey}/>
-              <input type="submit" value="Revoke Key" onClick={this.revokekey}/>
+              <ButtonRow>
+                <Button class='btn' type="submit" onClick={this.sharekey} variant="outline-dark">Share Key</Button>
+                <Button class='btn' type="submit" onClick={this.revokekey} variant="outline-dark">Revoke Key</Button>
+              </ButtonRow>
+              {/* <input type="submit" value="Share Key" onClick={this.sharekey}/>
+              <input type="submit" value="Revoke Key" onClick={this.revokekey}/> */}
               {/* <input type="submit" value="Send"/> */}
 
 
