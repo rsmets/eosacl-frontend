@@ -213,9 +213,9 @@ class Login extends Component {
               {/* <br/> */}
               {
                 hasScatter == -1 ? 
-                  <Spinner style={{"margin-top": '00px'}} animation="border" />
+                  <Spinner style={{"absolute-top": '10px'}} animation="border" />
                 : hasScatter == 0 ?
-                   <Alert style={{"margin-top": '10px'}} variant="danger">
+                   <Alert style={{"margin-top": '10px', 'margin-right': '10px'}} variant="danger">
                     No Scatter wallet detected. One must have a scatter wallet to use EOS ACL.
                   </Alert>
                   : ''
