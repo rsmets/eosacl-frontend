@@ -142,9 +142,11 @@ class Login extends Component {
             debugger;
             if (!id) {
                 alert('no id!')
+                dispatch(updateHasScatter(0))
                 return false;
             }
 
+            dispatch(updateHasScatter(1))
             dispatch(updateAuthenticated(true));
             // dispatch(inputName(ScatterJS.identity.name));
             debugger;
@@ -212,10 +214,11 @@ class Login extends Component {
               {
                 hasScatter == -1 ? 
                   <Spinner animation="border" />
-                :
+                : hasScatter == 0 ?
                    <Alert key='ad' variant="danger">
                     No Scatter wallet detected. One must have a scatter wallet to use EOS ACL.
                   </Alert>
+                  : ''
               }
             </fieldset>
           </form>
