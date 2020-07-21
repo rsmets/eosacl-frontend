@@ -227,9 +227,11 @@ class Login extends Component {
                 <br></br>
                 What does it solve? There is no central service or data store with all of your access credentials and access history.
                 <br></br>
-                Who would use this? Users or organizations that are sensitive to the security concerns of giving authoritative control to a ACL service provider.
+                Who would use this? Individuals or organizations that are sensitive to the security concerns of giving authoritative control to a ACL service provider.
                 <br></br>
-                Why do I need a Scatter wallet? It keeps your EOSIO account keys secure while handling signing transactions (access shares, revokes, logs, etc).
+                Why do I need a Scatter wallet? It keeps your EOS account keys secure while handling signing transactions (access shares, revokes, logs, etc).
+                <br></br>
+                Where is the access list stored? Publicly in the EOS myeosacldapp smart contract. Access logs are stored publicly as transactions on chain.
               </div>
             </fieldset>
           </form>
