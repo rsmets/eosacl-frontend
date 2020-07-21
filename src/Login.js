@@ -225,13 +225,13 @@ class Login extends Component {
                 This is the web interface for a decentralized Access Control List (ACL) application.
                 <br></br>
                 <br></br>
-                What does it solve? There is no central service or data store with all of your access credentials and access history.
+                <i>What does it solve?</i> There is no central service or data store with all of your access credentials and access history.
                 <br></br>
-                Who would use this? Individuals or organizations that are sensitive to the security concerns of giving authoritative control to a ACL service provider.
+                <i>Who would use this?</i> Individuals or organizations that are sensitive to the security concerns of giving authoritative control to a ACL service provider.
                 <br></br>
-                Why do I need a Scatter wallet? It keeps your EOS account keys secure while handling signing transactions (access shares, revokes, logs, etc).
+                <i>Why do I need a Scatter wallet?</i> It keeps your EOS account keys secure while handling signing transactions (access shares, revokes, logs, etc).
                 <br></br>
-                Where is the access list stored? Publicly in the EOS myeosacldapp smart contract. Access logs are stored publicly as transactions on chain.
+                <i>Where is the access list stored?</i> Publicly in the EOS myeosacldapp smart contract. Access logs are stored publicly as transactions on chain.
               </div>
             </fieldset>
           </form>
