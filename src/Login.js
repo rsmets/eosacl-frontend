@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import Button from 'react-bootstrap/Button';
 import Alert from 'react-bootstrap/Alert';
+import Spinner from 'react-bootstrap/Spinner';
 // import { Nav } from "./nav";
 import { inputName, inputTextarea, selectOption, updateHasScatter, setUser, updateAuthenticated, updateEosAccount } from "./actions";
 // import custom from "../styles/custom.css"; // eslint-disable-line no-unused-vars
@@ -84,7 +85,7 @@ class Login extends Component {
       username: { value: "" },
       eosAccount: { value: {} },
       authenticated: { value: false },
-      hasScatter: { value: false },
+      hasScatter: { value: 1 },
       passwordVal: { value: "" },
       textarea: { value: "" },
       selectedOption: { value: "0-13" }
@@ -125,6 +126,7 @@ class Login extends Component {
     // const account = ScatterService.scatterConnect();
 
     const { dispatch, username } = this.props;
+    dispatch(updateHasScatter(-1))
     const network = ScatterJS.Network.fromJson(networkJson);
     
     return ScatterJS.scatter.connect(CONTRACT_NAME, {network}).then(connected => {
@@ -133,7 +135,7 @@ class Login extends Component {
         debugger;
         if(!connected) {
             // alert(`No scatter wallet detected.`);
-            dispatch(updateHasScatter(false))
+            dispatch(updateHasScatter(0))
             return false;
         }
         return ScatterJS.login().then(id => {
@@ -206,8 +208,11 @@ class Login extends Component {
                 <Button type="submit" variant="outline-primary">Authenticate</Button>
               {/* <input type="submit" value="Send"/> */}
               {/* <label>One must have a scatter wallet to use EOS ACL.</label> */}
+              <br/>
               {
-                hasScatter ? ``:
+                hasScatter == -1 ? 
+                  <Spinner animation="border" />
+                :
                    <Alert key='ad' variant="danger">
                     No Scatter wallet detected. One must have a scatter wallet to use EOS ACL.
                   </Alert>

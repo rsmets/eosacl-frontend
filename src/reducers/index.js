@@ -173,7 +173,7 @@ const hasScatter = (store, action) => {
     };
   }
 
-  return store || { value: true };
+  return store || { value: 1 };
 };
 
 const eosAccount = (store, action) => {
