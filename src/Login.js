@@ -222,7 +222,8 @@ class Login extends Component {
               }
 
               <div>
-                This is the web interface for a decentralized Access Control List (ACL) application. 
+                This is the web interface for a decentralized Access Control List (ACL) application.
+                <br></br>
                 <br></br>
                 What does it solve? There is no central service or data store with all of your access credentials and access history.
                 <br></br>
