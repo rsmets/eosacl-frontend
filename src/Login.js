@@ -232,6 +232,8 @@ class Login extends Component {
                 <i>Why do I need a Scatter wallet?</i> It keeps your EOS account keys secure while handling signing transactions (access shares, revokes, logs, etc).
                 <br></br>
                 <i>Where is the access list stored?</i> Publicly in the EOS myeosacldapp smart contract. Access logs are stored publicly as transactions on chain.
+                <br></br>
+                <i>I don't trust the smart contract. Can I view and deploy the source code as my own dapp?</i> Yes, the source can be found <a href='https://github.com/rsmets/eosacl-smartcontract'>here</a>.
               </div>
             </fieldset>
           </form>
