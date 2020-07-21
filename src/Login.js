@@ -210,10 +210,10 @@ class Login extends Component {
                 <Button type="submit" onClick={this.login} variant="outline-primary">Authenticate</Button>
               {/* <input type="submit" value="Send"/> */}
               {/* <label>One must have a scatter wallet to use EOS ACL.</label> */}
-              <br/>
+              {/* <br/> */}
               {
                 hasScatter == -1 ? 
-                  <Spinner style={{"margin-top": '10px'}} animation="border" />
+                  <Spinner style={{"margin-top": '00px'}} animation="border" />
                 : hasScatter == 0 ?
                    <Alert style={{"margin-top": '10px'}} variant="danger">
                     No Scatter wallet detected. One must have a scatter wallet to use EOS ACL.
@@ -228,6 +228,8 @@ class Login extends Component {
                 What does it solve? There is no central service or data store with all of your access credentials and access history.
                 <br></br>
                 Who would use this? Users or organizations that are sensitive to the security concerns of giving authoritative control to a ACL service provider.
+                <br></br>
+                Why do I need a Scatter wallet? It keeps your EOSIO account keys secure while handling signing transactions (access shares, revokes, logs, etc).
               </div>
             </fieldset>
           </form>
