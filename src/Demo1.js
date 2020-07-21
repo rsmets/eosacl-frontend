@@ -10,7 +10,9 @@ import ApiService from './services/ApiService';
 // import axios from 'axios';
 import Demo2 from "./Demo2"
 import ScatterJS from 'scatterjs-core';
+import Button from 'react-bootstrap/Button';
 import './Demo1.css';
+import { ButtonRow } from '@thumbtack/thumbprint-react';
 // import {Link} from 'react-router-dom'
 // import { withToastManager, useToasts } from 'react-toast-notifications';
 // import { ToastContainer, toast } from 'react-toastify';
@@ -297,25 +299,40 @@ class Demo1 extends Component {
 render() {
       const { dispatch } = this.props;
       return (
-        <div styleName="custom.container">
+        <div class="parent">
           {/* <Nav {...this.props} /> */}
           <div styleName="demoStyle.container">
-          <h2>{`${this.props.username}'s`} Access Management</h2>
+          <h2>{`${this.props.username}'s`} access management</h2>
             {/* <form onSubmit={this.test}> */}
             {/* <form>
               <input type="submit" value="ShareKey" onClick={this.sharekey}/>
             </form> */}
             <form>
-            <input type="submit" value="Log Out" onClick={this.logout}/>
-            <button
-                  type="button"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    // window.location.href=`https://eosauthority.com/account/${this.props.targetUsername}?network=eos`;
-                    window.location.href=`https://eosauthority.com/account/rayzorsharp1?network=eos`;
-                    }}
-              > Get User Access History</button>
+            {/* <input type="submit" value="Log Out" onClick={this.logout}/> */}
+            <ButtonRow>
+              <Button class='btn' type="submit" onClick={this.logout} variant="outline-dark">Log Out</Button>
+              {/* <button
+                    type="button"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      // window.location.href=`https://eosauthority.com/account/${this.props.targetUsername}?network=eos`;
+                      window.location.href=`https://eosauthority.com/account/rayzorsharp1?network=eos`;
+                      }}
+                > Get User Access History</button> */}
 
+              <Button 
+                variant="outline-dark"
+                type="submit" 
+                onClick={(e) => {
+                  e.preventDefault();
+                  const url = `https://eosauthority.com/account/${this.props.username}?network=eos`
+                  const win = window.open(url, '_blank');
+                  win.focus();
+                  }}
+                >
+                  Get User Access History
+              </Button> 
+            </ButtonRow>
             {/* <form onSubmit={this.claimlock}> */}
             <label htmlFor="lockIdField">Lock ID</label>
             <input

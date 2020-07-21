@@ -4,13 +4,13 @@ import { connect } from "react-redux";
 import Button from 'react-bootstrap/Button';
 import Alert from 'react-bootstrap/Alert';
 import Spinner from 'react-bootstrap/Spinner';
+
 // import { Nav } from "./nav";
 import { inputName, inputTextarea, selectOption, updateHasScatter, setUser, updateAuthenticated, updateEosAccount } from "./actions";
 // import custom from "../styles/custom.css"; // eslint-disable-line no-unused-vars
 // import demoStyle from "../styles/demo1.css"; // eslint-disable-line no-unused-vars
 import ApiService from './services/ApiService';
 // import ScatterService from '../services/Scatter';
-
 import ScatterJS from 'scatterjs-core';
 import ScatterEOS from 'scatterjs-plugin-eosjs2';
 
@@ -176,15 +176,15 @@ class Login extends Component {
   render() {
     const { dispatch, username, authenticated, hasScatter } = this.props;
     return (
-      <div styleName="custom.container">
+      <div class="parent">
         {/* <Nav {...this.props} /> */}
         <div styleName="demoStyle.container">
           <h2>Authenticate With Scatter Wallet</h2>
           {/* {username ? `${username} is currently logged in`: <label htmlFor="nameField">Name</label>} */}
           {/* {username ? `${username} is currently logged in`: <label></label>} */}
           {authenticated ? `${username} is authenticated`: <label></label>}
-          <form onSubmit={this.login}>
-          {/* <form> */}
+          {/* <form onSubmit={this.login}> */}
+          <form>
             <fieldset>
               {/* <label htmlFor="nameField">Name</label>
               <input
@@ -207,15 +207,15 @@ class Login extends Component {
                 }}
               /> */}
               {/* <input type="submit" value="Authenticate" onClick={this.login}/> */}
-                <Button type="submit" variant="outline-primary">Authenticate</Button>
+                <Button type="submit" onClick={this.login} variant="outline-primary">Authenticate</Button>
               {/* <input type="submit" value="Send"/> */}
               {/* <label>One must have a scatter wallet to use EOS ACL.</label> */}
               <br/>
               {
                 hasScatter == -1 ? 
-                  <Spinner animation="border" />
+                  <Spinner style={{"margin-top": '10px'}} animation="border" />
                 : hasScatter == 0 ?
-                   <Alert key='ad' variant="danger">
+                   <Alert style={{"margin-top": '10px'}} variant="danger">
                     No Scatter wallet detected. One must have a scatter wallet to use EOS ACL.
                   </Alert>
                   : ''

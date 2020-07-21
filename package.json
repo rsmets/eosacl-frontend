@@ -3,9 +3,11 @@
   "version": "0.1.1",
   "private": true,
   "dependencies": {
+    "@thumbtack/thumbprint-react": "^14.0.0",
     "babel": "^6.23.0",
     "bootstrap": "^4.5.0",
     "eosjs2": "^1.0.0",
+    "node-sass": "^4.14.1",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-bootstrap": "^1.2.2",
