@@ -1,22 +1,22 @@
 import { Api, JsonRpc } from 'eosjs2';
+// import { JsSignatureProvider } from 'eosjs/dist/eosjs-jssig';
 import ScatterJS from 'scatterjs-core';
 import ScatterEOS from 'scatterjs-plugin-eosjs2';
+// import EosService from './EosService'
 const eosjs2 = require('eosjs2');
-// import 'babel-polyfill';
 // const fetch = require('node-fetch'); 
 
-// import { JsSignatureProvider } from 'eosjs/dist/eosjs-jssig';
-// import { JsSignatureProvider } from 'eosjs2/dist/eosjs2-jssig'; //HERE COULD BE THE ANSWER!!
 
 // import { eosjs_api } from 'eosjs/dist/eosjs-api';
 // import { eosjs_jsonrpc } from 'eosjs/dist/eosjs_jssig';
 
 // import ScatterEOS1  from 'scatterjs-plugin-eosjs';
+
 // import 'core-js/es6/symbol'; 
 // require ('core-js/fn/symbol/iterator');
 
-// import EosService from './EosService'
 
+// import 'babel-polyfill';
 
 ScatterJS.plugins( new ScatterEOS() );
 
@@ -79,8 +79,7 @@ async function takeAction(action, dataValue, account) {
   const rpc = new JsonRpc(ENDPOINT, {});
   // const rpc = new eosjs2.Rpc.JsonRpc(ENDPOINT, { fetch });
   // const signatureProvider = new JsSignatureProvider([privateKey]);
-  const signatureProvider = []
-  // const signatureProvider = new eosjs2.SignatureProvider([privateKey]);
+  const signatureProvider = new eosjs2.SignatureProvider([privateKey]);
   debugger;
   
 

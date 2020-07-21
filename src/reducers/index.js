@@ -165,6 +165,17 @@ const authenticated = (store, action) => {
   return store || { value: false };
 };
 
+const hasScatter = (store, action) => {
+  if (action.type === "HAS_SCATTER") {
+    // debugger;
+    return {
+      value: action.value
+    };
+  }
+
+  return store || { value: true };
+};
+
 const eosAccount = (store, action) => {
   if (action.type === "EOS_ACCOUNT") {
     debugger;
@@ -191,5 +202,6 @@ export default combineReducers({
   targetUsername,
   targetRole,
   authenticated,
+  hasScatter,
   eosAccount,
 });

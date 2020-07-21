@@ -92,6 +92,13 @@ export const toggleCheck = () => {
       value
     };
   };
+
+  export const updateHasScatter = value => {
+    return {
+      type: "HAS_SCATTER",
+      value
+    };
+  };
   
   export const updateEosAccount = value => {
     return {

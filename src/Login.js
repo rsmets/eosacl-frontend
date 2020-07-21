@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
+import Button from 'react-bootstrap/Button';
+import Alert from 'react-bootstrap/Alert';
 // import { Nav } from "./nav";
-import { inputName, inputTextarea, selectOption, passwordName, setUser, updateAuthenticated, updateEosAccount } from "./actions";
+import { inputName, inputTextarea, selectOption, updateHasScatter, setUser, updateAuthenticated, updateEosAccount } from "./actions";
 // import custom from "../styles/custom.css"; // eslint-disable-line no-unused-vars
 // import demoStyle from "../styles/demo1.css"; // eslint-disable-line no-unused-vars
 import ApiService from './services/ApiService';
@@ -82,6 +84,7 @@ class Login extends Component {
       username: { value: "" },
       eosAccount: { value: {} },
       authenticated: { value: false },
+      hasScatter: { value: false },
       passwordVal: { value: "" },
       textarea: { value: "" },
       selectedOption: { value: "0-13" }
@@ -129,7 +132,8 @@ class Login extends Component {
         // User does not have Scatter Desktop, Mobile or Classic installed.
         debugger;
         if(!connected) {
-            alert(`No scatter wallet detected.`);
+            // alert(`No scatter wallet detected.`);
+            dispatch(updateHasScatter(false))
             return false;
         }
         return ScatterJS.login().then(id => {
@@ -166,7 +170,7 @@ class Login extends Component {
   }
 
   render() {
-    const { dispatch, username, authenticated } = this.props;
+    const { dispatch, username, authenticated, hasScatter } = this.props;
     return (
       <div styleName="custom.container">
         {/* <Nav {...this.props} /> */}
@@ -175,8 +179,8 @@ class Login extends Component {
           {/* {username ? `${username} is currently logged in`: <label htmlFor="nameField">Name</label>} */}
           {/* {username ? `${username} is currently logged in`: <label></label>} */}
           {authenticated ? `${username} is authenticated`: <label></label>}
-          {/* <form onSubmit={this.loadUser}> */}
-          <form>
+          <form onSubmit={this.login}>
+          {/* <form> */}
             <fieldset>
               {/* <label htmlFor="nameField">Name</label>
               <input
@@ -198,9 +202,16 @@ class Login extends Component {
                   dispatch(passwordName(e.target.value));
                 }}
               /> */}
-              <input type="submit" value="Authenticate" onClick={this.login}/>
+              {/* <input type="submit" value="Authenticate" onClick={this.login}/> */}
+                <Button type="submit" variant="outline-primary">Authenticate</Button>
               {/* <input type="submit" value="Send"/> */}
-              <label htmlFor="ageRangeField">One must have a scatter wallet to use EOS ACL.</label>
+              {/* <label>One must have a scatter wallet to use EOS ACL.</label> */}
+              {
+                hasScatter ? ``:
+                   <Alert key='ad' variant="danger">
+                    No Scatter wallet detected. One must have a scatter wallet to use EOS ACL.
+                  </Alert>
+              }
             </fieldset>
           </form>
         </div>
@@ -223,6 +234,7 @@ const mapStateToProps = state => {
     username: state.username.value,
     eosAccount: state.eosAccount.value,
     authenticated: state.authenticated.value,
+    hasScatter: state.hasScatter.value,
     textarea: state.textarea.value,
     selectedOption: state.selectedOption.value
   };
