@@ -220,6 +220,14 @@ class Login extends Component {
                   </Alert>
                   : ''
               }
+
+              <div>
+                This is the web interface for a decentralized Access Control List (ACL) application. 
+                <br></br>
+                What does it solve? There is no central service or data store with all of your access credentials and access history.
+                <br></br>
+                Who would use this? Users or organizations that are sensitive to the security concerns of giving authoritative control to a ACL service provider.
+              </div>
             </fieldset>
           </form>
         </div>
